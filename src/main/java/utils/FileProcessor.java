@@ -4,15 +4,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
- public class FileUtil {
+ public class FileProcessor {
 
     private Scanner in;
 
     public String retrieveFileContents(final String fileName) {
-        File song = new File(getClass().getClassLoader().getResource(fileName).getFile());
+        File textFile = new File(getClass().getClassLoader().getResource(fileName).getFile());
         try {
-            in = new Scanner(song);
+            in = new Scanner(textFile);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
